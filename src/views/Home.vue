@@ -3,7 +3,7 @@
     <h1>8 Classic Childrens books</h1>
     <div class="books-container">
       <div v-for="book in books" :key="book.id">
-        <router-link :to="{name: 'Detail', params: book}">
+        <router-link :to="{ name: 'Detail', params: { id: book.id, book } }">
           <BookComponent class="book-item" :book="book" />
         </router-link>
       </div>
@@ -18,7 +18,7 @@ export default {
   components: { BookComponent },
   computed: {
     books() {
-      return this.$root.$data.books;
+      return this.$store.state.books;
     }
   }
 };

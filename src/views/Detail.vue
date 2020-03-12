@@ -4,24 +4,24 @@
       <i class="fas fa-arrow-circle-left"></i>
     </router-link>
     <div class="wrapper">
-      <section class="book-cover" :style="{backgroundColor: this.$route.params.color}">
-        <h1>{{this.$route.params.title}}</h1>
-        <p>{{this.$route.params.author}}</p>
+      <section class="book-cover" :style="{backgroundColor: book.color}">
+        <h1>{{book.title}}</h1>
+        <p>{{book.author}}</p>
       </section>
       <section class="book-info">
         <div>
-          <h1>{{this.$route.params.title}}</h1>
-          <p>{{this.$route.params.author}}</p>
+          <h1>{{book.title}}</h1>
+          <p>{{book.author}}</p>
         </div>
 
         <article>
-          <p>{{this.$route.params.plot}}</p>
+          <p>{{book.plot}}</p>
         </article>
         <ul class="info">
-          <li>Audience: {{this.$route.params.audience}}</li>
-          <li>First published: {{this.$route.params.year}}</li>
-          <li>Pages: {{this.$route.params.pages}}</li>
-          <li>Publisher: {{this.$route.params.publisher}}</li>
+          <li>Audience: {{book.audience}}</li>
+          <li>First published: {{book.year}}</li>
+          <li>Pages: {{book.pages}}</li>
+          <li>Publisher: {{book.publisher}}</li>
         </ul>
         <button>Oh, I want to read it!</button>
       </section>
@@ -31,7 +31,8 @@
 
 <script>
 export default {
-  name: "Detail"
+  name: "Detail",
+  props: ["book"]
 };
 </script>
 

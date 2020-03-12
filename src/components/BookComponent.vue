@@ -8,7 +8,9 @@
 <script>
 export default {
   name: "BookComponent",
-  props: ["book"]
+  props: {
+    book: Object
+  }
 };
 </script>
 
